@@ -1,0 +1,103 @@
+﻿<Page x:Class="Aiport_v2.pageFolder.pageEditUser"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Aiport_v2.pageFolder"
+      mc:Ignorable="d"
+      Title="Edit Role" Width="800" Height="325.42">
+
+    <Grid>
+        <Border>
+            <StackPanel
+                HorizontalAlignment="Left">
+                <StackPanel
+                    Orientation="Horizontal"
+                    HorizontalAlignment="Left">
+                    <TextBlock
+                        Name="tbChoose"
+                        Text="Choose a user."
+                        Style="{StaticResource tbStyle}"/>
+                </StackPanel>
+                <StackPanel
+                    Name="stEditRole"
+                    Visibility="Visible">
+                    <StackPanel
+                    Orientation="Horizontal"
+                    HorizontalAlignment="Right">
+                        <TextBlock
+                        Text="Email address:"
+                        Style="{StaticResource tbStyle}"/>
+                        <TextBox
+                            Name="tbEmail"
+                        Style="{StaticResource tboxStil}"/>
+                    </StackPanel>
+                    <StackPanel
+                    Orientation="Horizontal"
+                    HorizontalAlignment="Right">
+                        <TextBlock
+                        Text="First name:"
+                        Style="{StaticResource tbStyle}"/>
+                        <TextBox
+                            Name="tbFirstName"
+                        Style="{StaticResource tboxStil}"/>
+                    </StackPanel>
+                    <StackPanel
+                    Orientation="Horizontal"
+                    HorizontalAlignment="Right">
+                        <TextBlock
+                        Text="Last name:"
+                        Style="{StaticResource tbStyle}"/>
+                        <TextBox
+                            Name="tbLastName"
+                        Style="{StaticResource tboxStil}"/>
+                    </StackPanel>
+                    <StackPanel
+                    Orientation="Horizontal"
+                    HorizontalAlignment="Right">
+                        <TextBlock
+                        Text="Ofiice:"
+                        Style="{StaticResource tbStyle}"/>
+                        <ComboBox
+                            Name="cmbOffice"
+                        Width="250"
+                        Margin="5"
+                        FontSize="16"
+                        BorderThickness="0">
+                        </ComboBox>
+                    </StackPanel>
+                    <StackPanel
+                    Orientation="Horizontal"
+                    HorizontalAlignment="Center">
+                        <StackPanel
+                        Margin="5">
+                            <Border
+                                BorderBrush="#F79420"
+                                BorderThickness="4"
+                                Width="180">
+                                <StackPanel>
+                                    <CheckBox
+                                        Click="cbUser_Click"
+                                        Name="cbUser"
+                                        Style="{StaticResource cbStyle}"
+                                        Content="User" IsChecked="True"/>
+                                    <CheckBox
+                                        Click="cbAdmin_Click"
+                                        Name="cbAdmin"
+                                        Style="{StaticResource cbStyle}"
+                                        Content="Administrator"/>
+                                </StackPanel>
+                            </Border>
+                        </StackPanel>
+                        <Button
+                            Name="btnSaneChanges"
+                            Click="btnSaneChanges_Click"
+                            Height="53"
+                            Content="Save Changes"
+                            Style="{StaticResource btnAdmin}"/>
+                    </StackPanel>
+                </StackPanel>
+            </StackPanel>
+        </Border>
+    </Grid>
+</Page>

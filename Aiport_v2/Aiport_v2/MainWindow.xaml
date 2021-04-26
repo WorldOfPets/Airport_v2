@@ -1,0 +1,78 @@
+﻿<Window x:Class="Aiport_v2.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Aiport_v2"
+        mc:Ignorable="d"
+        Title="MainWindow" 
+        ResizeMode="NoResize"
+        Height="550" 
+        Width="800"
+        WindowStyle="None">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="35px"/>
+            <RowDefinition Height="80*"/>
+            <RowDefinition Height="284*"/>
+        </Grid.RowDefinitions>
+        <Grid
+            Grid.Row="0"
+            Name="gridMove"
+            MouseDown="gridMove_MouseDown"
+            Background="#196AA6">
+            <StackPanel
+                
+                Orientation="Horizontal">
+                <Image 
+                    Source="./resFolder/white.png"
+                    Margin="5"
+                    Height="23"/>
+                <TextBlock
+                    VerticalAlignment="Center"
+                    Foreground="White"
+                    FontSize="24"
+                    Name="tbMain"
+                    Margin="10 0 0 0"
+                    Text="{Binding ElementName=frmMain, Path=Content.Title}">
+                    
+                </TextBlock>
+            </StackPanel>
+            <StackPanel
+                HorizontalAlignment="Right">
+                <Button 
+                    Name="btnClose"
+                    Click="btnClose_Click"
+                    Height="25"
+                    Width="25"
+                    Margin="0 5 10 5"
+                    Background="White"
+                    BorderBrush="Transparent"
+                    BorderThickness="0"
+                    Foreground="#196AA6"
+                    FontWeight="ExtraBold">
+                    X
+                </Button>
+            </StackPanel>
+        </Grid>
+        <Grid
+            Grid.Row="1"
+            Background="#F79420">
+            <StackPanel
+                Name="stcImg"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center">
+                <Image
+                    Height="92px"
+                    Source="./resFolder/logo-white.png"/>
+            </StackPanel>
+            
+        </Grid>
+        <Frame
+            Background="#196AA6"
+            Grid.Row="3"
+            Name="frmMain"
+            ContentRendered="frmMain_ContentRendered"
+            NavigationUIVisibility="Hidden"/>
+    </Grid>
+</Window>

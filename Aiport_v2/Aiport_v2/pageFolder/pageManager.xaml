@@ -1,0 +1,185 @@
+﻿<Page x:Class="Aiport_v2.pageFolder.pageManager"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Aiport_v2.pageFolder"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="pageManager">
+
+    <Grid>
+        <StackPanel>
+            
+            <Border
+                BorderBrush="#F79420"
+                BorderThickness="3"
+                Height="90"
+                Margin="5"
+                VerticalAlignment="Top">
+        <StackPanel
+            HorizontalAlignment="Center"
+            VerticalAlignment="Top"
+            Orientation="Horizontal"
+            Margin="5">
+                
+            <StackPanel>
+                <StackPanel
+                    Orientation="Horizontal"
+                    HorizontalAlignment="Right">
+                    <TextBlock Text="From" Style="{StaticResource tbStyle}"/>
+                            <Border
+                                Name="cmbBorderFrom"
+                                Margin="5"
+                                BorderBrush="Red"
+                                BorderThickness="2">
+                                
+                    <ComboBox
+                        SelectionChanged="CmbFrom_SelectionChanged"
+                        DropDownClosed="CmbFrom_DropDownClosed"
+                        Name="CmbFrom"
+                        Margin="0"
+                        Width="126"
+                        Style="{StaticResource cmbStyle}"/>
+                            </Border>
+                </StackPanel>
+                <StackPanel
+                    HorizontalAlignment="Right"
+                    Orientation="Horizontal">
+                    <TextBlock Text="Outbound" Style="{StaticResource tbStyle}"/>
+                    <TextBox 
+                        BorderBrush="Red"
+                        Name="tbDate"
+                        TextChanged="tbDate_TextChanged"
+                        Style="{StaticResource tboxStyle1}"/>
+                </StackPanel>
+            </StackPanel>
+            <StackPanel>
+                <StackPanel
+                    HorizontalAlignment="Right"
+                    Orientation="Horizontal">
+                    <TextBlock Text="To" Style="{StaticResource tbStyle}"/>
+                            <Border
+                                Name="cmbBorderTo"
+                                Margin="5"
+                                BorderBrush="Red"
+                                BorderThickness="2">
+                                <ComboBox
+                                    SelectionChanged="CmbFrom_SelectionChanged"
+                        Width="126"
+                        Margin="0"
+                        Name="CmbTo"
+                        DropDownClosed="CmbTo_DropDownClosed"
+                        Style="{StaticResource cmbStyle}"/>
+                            </Border>
+                </StackPanel>
+                <StackPanel
+                    Orientation="Horizontal">
+                    <TextBlock Text="Flight number" Style="{StaticResource tbStyle}"/>
+                    <TextBox 
+                        Name="tbFlNumber"
+                        BorderBrush="Red"
+                        TextChanged="tbFlNumber_TextChanged"
+                        Style="{StaticResource tboxStyle1}"/>
+                </StackPanel>
+            </StackPanel>
+            <StackPanel>
+                <StackPanel
+                    HorizontalAlignment="Right"
+                    Orientation="Horizontal">
+                    <TextBlock Text="Sort by" Style="{StaticResource tbStyle}"/>
+                            <Border
+                                Name="cmbBorderSort"
+                                Margin="5"
+                                BorderBrush="Green"
+                                BorderThickness="2">
+                                <ComboBox 
+                                    Name="CmbSort"
+                                    Margin="0"
+                                    Width="126"
+                                    Style="{StaticResource cmbStyle}"/>
+                            </Border>
+                </StackPanel>
+                        <StackPanel
+                            Orientation="Horizontal"
+                            HorizontalAlignment="Right">
+                            
+                        <Button
+                            Click="btnCancelSort_Click"
+                            Name="btnCancelSort"
+                            Height="25"
+                            FontSize="20"
+                            Content="Cancel"
+                            Width="70"
+                            Style="{StaticResource btnAdmin}"/>
+                        <Button
+                            Name="BtnApply"
+                            Click="BtnApply_Click"
+                            Height="25"
+                            FontSize="20"
+                            Content="Apply"
+                            Width="70"
+                            Style="{StaticResource btnAdmin}"/>
+                        </StackPanel>
+            </StackPanel>
+        </StackPanel>
+            </Border>
+        <Border>
+            
+        <StackPanel>
+            <StackPanel>
+                <DataGrid
+                    Name="dataManager"
+                    AutoGenerateColumns="False"
+                    Margin="5 0 5 0"
+                    BorderThickness="3"
+                    Height="260"
+                    BorderBrush="#F79420">
+                            <DataGrid.RowStyle>
+                                <Style TargetType="DataGridRow">
+                                    <Setter Property="Background" Value="{Binding getBackg}"/>
+                                    <Setter Property="Foreground" Value="{Binding getForeg}"/>
+                                    <EventSetter Event="Selected" Handler="DataGridRow_Selected"/>
+                                </Style>
+
+                            </DataGrid.RowStyle>
+                            <DataGrid.Columns>
+                        <DataGridTextColumn Header="Date" Width="*" Binding="{Binding getDate}"/>
+                        <DataGridTextColumn Header="Time" Width="*" Binding="{Binding Time}"/>
+                        <DataGridTextColumn Header="From" Width="*" Binding="{Binding getFrom}"/>
+                        <DataGridTextColumn Header="To" Width="*" Binding="{Binding getTo}"/>
+                        <DataGridTextColumn Header="Flight number" Width="*" Binding="{Binding FlightNumber}"/>
+                        <DataGridTextColumn Header="Aircraft" Width="*" Binding="{Binding Aircraft.Name}"/>
+                        <DataGridTextColumn Header="Economy price" Width="*" Binding="{Binding getEc}"/>
+                        <DataGridTextColumn Header="Business price" Width="*" Binding="{Binding getBus}"/>
+                        <DataGridTextColumn Header="Firs class price" Width="*" Binding="{Binding getFir}"/>
+                    </DataGrid.Columns>
+                </DataGrid>
+            </StackPanel>
+            <Grid>
+                <StackPanel
+                    Orientation="Horizontal">
+                    <Button
+                        Name="CancelFl"
+                        Click="CancelFl_Click"
+                        Content="Cancel Flight"
+                        Height="32"
+                        Style="{StaticResource btnAdmin}"/>
+                    <Button
+                        Name="btnEditFl"
+                        Click="btnEditFl_Click"
+                        Content="Edit Flight"
+                        Height="32"
+                        Style="{StaticResource btnAdmin}"/>
+                </StackPanel>
+                <Button
+                    HorizontalAlignment="Right"
+                    Content="Import Changes"
+                    Height="32"
+                    Style="{StaticResource btnAdmin}"/>
+             </Grid>
+        </StackPanel>
+        </Border>
+        </StackPanel>
+    </Grid>
+</Page>

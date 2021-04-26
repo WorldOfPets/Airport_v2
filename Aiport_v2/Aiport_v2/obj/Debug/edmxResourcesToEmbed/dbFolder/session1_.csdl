@@ -1,0 +1,167 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Session1_16Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="Session1_16Entities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Country" EntityType="Session1_16Model.Country" />
+    <EntitySet Name="Office" EntityType="Session1_16Model.Office" />
+    <EntitySet Name="Role" EntityType="Session1_16Model.Role" />
+    <EntitySet Name="Status" EntityType="Session1_16Model.Status" />
+    <EntitySet Name="sysdiagrams" EntityType="Session1_16Model.sysdiagrams" />
+    <EntitySet Name="TimeStatus" EntityType="Session1_16Model.TimeStatus" />
+    <EntitySet Name="User" EntityType="Session1_16Model.User" />
+    <AssociationSet Name="FK_Offices_Countries" Association="Session1_16Model.FK_Offices_Countries">
+      <End Role="Country" EntitySet="Country" />
+      <End Role="Office" EntitySet="Office" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Users_Offices" Association="Session1_16Model.FK_Users_Offices">
+      <End Role="Office" EntitySet="Office" />
+      <End Role="User" EntitySet="User" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Users_Roles" Association="Session1_16Model.FK_Users_Roles">
+      <End Role="Role" EntitySet="Role" />
+      <End Role="User" EntitySet="User" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TimeStatus_Status" Association="Session1_16Model.FK_TimeStatus_Status">
+      <End Role="Status" EntitySet="Status" />
+      <End Role="TimeStatus" EntitySet="TimeStatus" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TimeStatus_User" Association="Session1_16Model.FK_TimeStatus_User">
+      <End Role="User" EntitySet="User" />
+      <End Role="TimeStatus" EntitySet="TimeStatus" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Country">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Office" Relationship="Session1_16Model.FK_Offices_Countries" FromRole="Country" ToRole="Office" />
+  </EntityType>
+  <EntityType Name="Office">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CountryID" Type="Int32" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Phone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Contact" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Country" Relationship="Session1_16Model.FK_Offices_Countries" FromRole="Office" ToRole="Country" />
+    <NavigationProperty Name="User" Relationship="Session1_16Model.FK_Users_Offices" FromRole="Office" ToRole="User" />
+  </EntityType>
+  <EntityType Name="Role">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="User" Relationship="Session1_16Model.FK_Users_Roles" FromRole="Role" ToRole="User" />
+  </EntityType>
+  <EntityType Name="Status">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="TimeStatus" Relationship="Session1_16Model.FK_TimeStatus_Status" FromRole="Status" ToRole="TimeStatus" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="TimeStatus">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="IdUser" Type="Int32" />
+    <Property Name="EnterDate" Type="DateTime" Precision="3" />
+    <Property Name="IdStatus" Type="Int32" />
+    <Property Name="ExitTime" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="Status" Relationship="Session1_16Model.FK_TimeStatus_Status" FromRole="TimeStatus" ToRole="Status" />
+    <NavigationProperty Name="User" Relationship="Session1_16Model.FK_TimeStatus_User" FromRole="TimeStatus" ToRole="User" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="IdOffice" Type="Int32" />
+    <Property Name="IdRole" Type="Int32" />
+    <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Firstname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Lastname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Birthdate" Type="DateTime" Precision="0" />
+    <Property Name="Active" Type="Boolean" />
+    <NavigationProperty Name="Office" Relationship="Session1_16Model.FK_Users_Offices" FromRole="User" ToRole="Office" />
+    <NavigationProperty Name="Role" Relationship="Session1_16Model.FK_Users_Roles" FromRole="User" ToRole="Role" />
+    <NavigationProperty Name="TimeStatus" Relationship="Session1_16Model.FK_TimeStatus_User" FromRole="User" ToRole="TimeStatus" />
+  </EntityType>
+  <Association Name="FK_Offices_Countries">
+    <End Type="Session1_16Model.Country" Role="Country" Multiplicity="0..1" />
+    <End Type="Session1_16Model.Office" Role="Office" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Country">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Office">
+        <PropertyRef Name="CountryID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Users_Offices">
+    <End Type="Session1_16Model.Office" Role="Office" Multiplicity="0..1" />
+    <End Type="Session1_16Model.User" Role="User" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Office">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="User">
+        <PropertyRef Name="IdOffice" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Users_Roles">
+    <End Type="Session1_16Model.Role" Role="Role" Multiplicity="0..1" />
+    <End Type="Session1_16Model.User" Role="User" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Role">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="User">
+        <PropertyRef Name="IdRole" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TimeStatus_Status">
+    <End Type="Session1_16Model.Status" Role="Status" Multiplicity="0..1" />
+    <End Type="Session1_16Model.TimeStatus" Role="TimeStatus" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Status">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="TimeStatus">
+        <PropertyRef Name="IdStatus" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TimeStatus_User">
+    <End Type="Session1_16Model.User" Role="User" Multiplicity="0..1" />
+    <End Type="Session1_16Model.TimeStatus" Role="TimeStatus" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="TimeStatus">
+        <PropertyRef Name="IdUser" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>
