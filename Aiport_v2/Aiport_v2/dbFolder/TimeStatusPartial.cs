@@ -8,7 +8,7 @@ namespace Aiport_v2.dbFolder
 {
     public partial class TimeStatus
     {
-        public string getDate 
+        public string getDate //Получение даты
         {
             get 
             {
@@ -16,28 +16,28 @@ namespace Aiport_v2.dbFolder
             }
         }
 
-        public string getLoginTime
+        public string getLoginTime //Получение времени (полный формат)
         {
             get 
             {
                 return TimeEnter.Value.ToShortTimeString();
             }
         }
-        public string getExitTime
+        public string getExitTime //Получение времени выхода
         {
             get
             {
                 return TimeExit.Value.ToShortTimeString();
             }
         }
-        public DateTime getInSys
+        public DateTime getInSys //Получение времени проведенного в системе
         {
             get 
             {
                 return Convert.ToDateTime((TimeExit.Value.TimeOfDay - TimeEnter.Value.TimeOfDay).ToString());
             }
         }
-        public string getTimeInSys
+        public string getTimeInSys //Преобразование в строку (костыль)
         {
             get
             {
@@ -45,7 +45,7 @@ namespace Aiport_v2.dbFolder
             }
         }
 
-        public string getErrorColour
+        public string getErrorColour //Получение цвет строки
         {
             get
             {
@@ -57,7 +57,7 @@ namespace Aiport_v2.dbFolder
                     return "White";
             }
         }
-        public string getErrorFore
+        public string getErrorFore //Получение цвета шрифта
         {
             get
             {

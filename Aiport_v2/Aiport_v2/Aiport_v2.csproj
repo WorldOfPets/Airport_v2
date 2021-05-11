@@ -136,6 +136,14 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="pageFolder\EditFly.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="pageFolder\ErrorWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="pageFolder\pageAdd.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -164,6 +172,12 @@
   <ItemGroup>
     <Compile Include="pageFolder\EditAndImport.xaml.cs">
       <DependentUpon>EditAndImport.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="pageFolder\EditFly.xaml.cs">
+      <DependentUpon>EditFly.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="pageFolder\ErrorWindow.xaml.cs">
+      <DependentUpon>ErrorWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="pageFolder\pageAdd.xaml.cs">
       <DependentUpon>pageAdd.xaml</DependentUpon>

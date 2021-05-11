@@ -23,13 +23,13 @@ namespace Aiport_v2.pageFolder
         public pageAdd()
         {
             InitializeComponent();
-
+            //Комбобокс с оффисами
             cmbOfficeAdd.SelectedValuePath = "Id";
             cmbOfficeAdd.DisplayMemberPath = "Title";
             cmbOfficeAdd.ItemsSource = classFolder.dbClass.entities.Office.Where(x => x.Title != "All").ToList();
         }
         #region Кнопка добавления нового пользователя
-        private void btnAdd_Click(object sender, RoutedEventArgs e)
+        private void btnAdd_Click(object sender, RoutedEventArgs e)//Добавление пользователя
         {
             try
             {

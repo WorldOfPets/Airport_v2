@@ -20,7 +20,7 @@ namespace Aiport_v2.pageFolder
     /// </summary>
     public partial class pageManager : Page
     {
-        public static int idDat { get; set; }
+        public static int idDat { get; set; } = 0;
         public static string editOrImport { get; set; }
         public pageManager()
         {

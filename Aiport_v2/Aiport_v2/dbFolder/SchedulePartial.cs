@@ -8,14 +8,14 @@ namespace Aiport_v2.dbFolder
 {
     public partial class Schedule
     {
-        public string getDate
+        public string getDate //Получение даты
         {
             get 
             {
                 return Date.Value.ToShortDateString();
             }
         }
-        public string getFrom
+        public string getFrom //Получение откуда вылетаем
         {
             get
             {
@@ -23,7 +23,7 @@ namespace Aiport_v2.dbFolder
                 return test.IATACode;
             }
         }
-        public string getTo
+        public string getTo //Полученте куда прилетаем
         {
             get
             {
@@ -32,7 +32,7 @@ namespace Aiport_v2.dbFolder
             }
         }
 
-        public string getEc
+        public string getEc //Получение эконом цены
         {
             get
             {
@@ -40,35 +40,35 @@ namespace Aiport_v2.dbFolder
             }
         }
 
-        public string getBus
+        public string getBus //Получение бизнес цены
         {
             get
             {
                 return $"${Math.Round((double)EconomyPrice * (double)1.35)}";
             }
         }
-        public double getBusi
+        public double getBusi //Костыль
         {
             get
             {
                 return Math.Round((double)EconomyPrice * (double)1.35);
             }
         }
-        public string getFir
+        public string getFir //Получение вип цены
         {
             get
             {
                 return $"${Math.Round((double)getBusi * (double)1.30)}";
             }
         }
-        public string getBackg
+        public string getBackg //Получение цвета заднего фона строки
         {
             get
             {
                 if (Confirmed == true) { return "White"; } else return "Red";
             }
         }
-        public string getForeg
+        public string getForeg //Получение цвета шрифта строки
         {
             get
             {

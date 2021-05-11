@@ -22,18 +22,22 @@ namespace Aiport_v2.pageFolder
         public EditAndImport()
         {
             InitializeComponent();
+            if (pageManager.editOrImport == "Edit")//Страница изменения полета
+            {
+                frmEdit.Navigate(new EditFly());
+            }
         }
 
         private void gridMove_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            this.DragMove();
+            this.DragMove();//Перемещение окна
         }
 
-        private void btnClose_Click(object sender, RoutedEventArgs e)
+        public void btnClose_Click(object sender, RoutedEventArgs e)
         {
             try
             {
-                this.Close();
+                this.Close();//Закрытие окна
             }
             catch (Exception ex)
             {
