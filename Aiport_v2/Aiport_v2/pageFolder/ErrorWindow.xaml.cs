@@ -29,5 +29,10 @@ namespace Aiport_v2.pageFolder
         {
             this.Close();
         }
+
+        private void gridMove_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            this.DragMove();
+        }
     }
 }

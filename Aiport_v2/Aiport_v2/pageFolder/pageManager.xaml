@@ -173,6 +173,8 @@
                         Style="{StaticResource btnAdmin}"/>
                 </StackPanel>
                 <Button
+                    Name="btnImport"
+                    Click="btnImport_Click"
                     HorizontalAlignment="Right"
                     Content="Import Changes"
                     Height="32"

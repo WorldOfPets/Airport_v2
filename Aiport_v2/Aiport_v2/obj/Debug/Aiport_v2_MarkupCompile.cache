@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Users\admin_user\Source\Repos\WorldOfPets\Airport_v2\Aiport_v2\Aiport_v2\App.xaml
-10-1776015895
+11-1716606524
 2498073019
-36785350443
+371756220203
 18-1154861674
-MainWindow.xaml;pageFolder\EditAndImport.xaml;pageFolder\EditFly.xaml;pageFolder\ErrorWindow.xaml;pageFolder\pageAdd.xaml;pageFolder\pageAdmin.xaml;pageFolder\pageEditUser.xaml;pageFolder\pageLogin.xaml;pageFolder\pageManager.xaml;pageFolder\pageUser.xaml;
+MainWindow.xaml;pageFolder\EditAndImport.xaml;pageFolder\EditFly.xaml;pageFolder\ErrorWindow.xaml;pageFolder\ImportFly.xaml;pageFolder\pageAdd.xaml;pageFolder\pageAdmin.xaml;pageFolder\pageEditUser.xaml;pageFolder\pageLogin.xaml;pageFolder\pageManager.xaml;pageFolder\pageUser.xaml;
 
-True
+False
 

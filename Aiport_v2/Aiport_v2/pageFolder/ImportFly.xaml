@@ -1,0 +1,84 @@
+﻿<Page x:Class="Aiport_v2.pageFolder.ImportFly"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Aiport_v2.pageFolder"
+      mc:Ignorable="d" 
+      d:DesignHeight="400" d:DesignWidth="600"
+      Title="ImportFly">
+
+    <Grid>
+        <StackPanel
+            VerticalAlignment="Center">
+            
+        <StackPanel
+            Margin="10"
+            VerticalAlignment="Top">
+            <TextBlock 
+                Text="Please select the text file with the changes"
+                Style="{StaticResource tbStyle}"/>
+            <StackPanel
+                Orientation="Horizontal">
+                <TextBox
+                    Name="tbPathFile"
+                    Width="380"
+                    Style="{StaticResource tboxStil}"/>
+                <Button 
+                    Name="BtnImport"
+                    Click="BtnImport_Click"
+                    Height="30"
+                    Style="{StaticResource btnAdmin}"
+                    Content="Import"/>
+            </StackPanel>
+        </StackPanel>
+        <Border
+            BorderBrush="#F79420"
+            BorderThickness="3"
+            Margin="10"
+            VerticalAlignment="Center">
+            <StackPanel>
+                <TextBlock
+                    Margin="10 -15 5 0"
+                    HorizontalAlignment="Left"
+                    Background="#196AA6"
+                    Text="Results"
+                    Style="{StaticResource tbStyle}"/>
+                <StackPanel
+                    Orientation="Horizontal">
+                    <TextBlock
+                        Margin="10"
+                        Text="Successful Changes Applied:"
+                        Style="{StaticResource tbStyle}"/>
+                    <TextBlock
+                        Margin="10"
+                        Text="[xxxx]"
+                        Style="{StaticResource tbStyle}"/>
+                </StackPanel>
+                <StackPanel
+                    Orientation="Horizontal">
+                    <TextBlock
+                        Margin="10"
+                        Text="Duplicate Records Discarded:"
+                        Style="{StaticResource tbStyle}"/>
+                    <TextBlock
+                        Margin="10"
+                        Text="[xxxx]"
+                        Style="{StaticResource tbStyle}"/>
+                </StackPanel>
+                <StackPanel
+                    Orientation="Horizontal">
+                    <TextBlock
+                        Margin="10"
+                        Text="Record with missing fields discarded:"
+                        Style="{StaticResource tbStyle}"/>
+                    <TextBlock
+                        Margin="10"
+                        Text="[xxxx]"
+                        Style="{StaticResource tbStyle}"/>
+                </StackPanel>
+            </StackPanel>
+        </Border>
+        </StackPanel>
+    </Grid>
+</Page>

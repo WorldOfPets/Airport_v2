@@ -178,3 +178,6 @@ C:\Users\admin_user\Source\Repos\WorldOfPets\Airport_v2\Aiport_v2\Aiport_v2\obj\
 C:\Users\admin_user\Source\Repos\WorldOfPets\Airport_v2\Aiport_v2\Aiport_v2\obj\Debug\pageFolder\EditFly.g.cs
 C:\Users\admin_user\Source\Repos\WorldOfPets\Airport_v2\Aiport_v2\Aiport_v2\obj\Debug\pageFolder\EditFly.baml
 C:\Users\admin_user\Source\Repos\WorldOfPets\Airport_v2\Aiport_v2\Aiport_v2\obj\Debug\pageFolder\ErrorWindow.g.cs
+C:\Users\admin_user\Source\Repos\WorldOfPets\Airport_v2\Aiport_v2\Aiport_v2\obj\Debug\pageFolder\ErrorWindow.baml
+C:\Users\admin_user\Source\Repos\WorldOfPets\Airport_v2\Aiport_v2\Aiport_v2\obj\Debug\pageFolder\ImportFly.g.cs
+C:\Users\admin_user\Source\Repos\WorldOfPets\Airport_v2\Aiport_v2\Aiport_v2\obj\Debug\pageFolder\ImportFly.baml

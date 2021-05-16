@@ -26,6 +26,10 @@ namespace Aiport_v2.pageFolder
             {
                 frmEdit.Navigate(new EditFly());
             }
+            if (pageManager.editOrImport == "Import")//Страница изменения полета
+            {
+                frmEdit.Navigate(new ImportFly());
+            }
         }
 
         private void gridMove_MouseDown(object sender, MouseButtonEventArgs e)

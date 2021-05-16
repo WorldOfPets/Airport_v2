@@ -179,5 +179,12 @@ namespace Aiport_v2.pageFolder
             pageFolder.EditAndImport editAndImport = new EditAndImport();
             editAndImport.Show();
         }
+
+        private void btnImport_Click(object sender, RoutedEventArgs e)
+        {
+            editOrImport = "Import";
+            pageFolder.EditAndImport editAndImport = new EditAndImport();
+            editAndImport.Show();
+        }
     }
 }

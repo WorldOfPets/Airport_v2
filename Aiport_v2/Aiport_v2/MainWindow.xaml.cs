@@ -47,12 +47,12 @@ namespace Aiport_v2
                 var TimeExit = classFolder.dbClass.entities.TimeStatus.FirstOrDefault(x => x.Id == MainWindow.TimeIn);
                 TimeExit.TimeExit = DateTime.Now;
                 classFolder.dbClass.entities.SaveChanges();
-                this.Close();
+                Application.Current.Shutdown();
             }
             catch (Exception ex)
             {
                 classFolder.errorClass.except(ex);
-                this.Close();
+                Application.Current.Shutdown();
             }
         }
 
